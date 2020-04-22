@@ -30,9 +30,10 @@ import androidx.lifecycle.Observer
 import com.example.android.dagger.R
 import com.example.android.dagger.registration.RegistrationActivity
 import com.example.android.dagger.registration.RegistrationViewModel
+import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-class EnterDetailsFragment : Fragment() {
+class EnterDetailsFragment : DaggerFragment() {
 
     /**
      * RegistrationViewModel is used to set the username and password information (attached to
@@ -55,12 +56,12 @@ class EnterDetailsFragment : Fragment() {
     private lateinit var usernameEditText: EditText
     private lateinit var passwordEditText: EditText
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
+    //override fun onAttach(context: Context) {
+    //    super.onAttach(context)
 
         // Grabs the registrationComponent from the Activity and injects this Fragment
-        (activity as RegistrationActivity).registrationComponent.inject(this)
-    }
+        //(activity as RegistrationActivity).registrationComponent.inject(this)
+    //}
 
     override fun onCreateView(
         inflater: LayoutInflater,
