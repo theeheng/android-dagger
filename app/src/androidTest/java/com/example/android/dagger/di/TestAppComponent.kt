@@ -16,11 +16,16 @@
 
 package com.example.android.dagger.di
 
+import com.example.android.dagger.login.LoginModule
+import com.example.android.dagger.registration.RegistrationModule
 import dagger.Component
+import dagger.android.AndroidInjectionModule
+import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 // Replacement for AppComponent in android tests
 @Singleton
 // Includes TestStorageModule that overrides objects provided in StorageModule
-@Component(modules = [TestStorageModule::class, AppSubcomponents::class])
+@Component(modules = [TestStorageModule::class, RegistrationModule::class, LoginModule::class, AppSubcomponents::class, AndroidInjectionModule::class,
+    AndroidSupportInjectionModule::class])
 interface TestAppComponent : AppComponent
